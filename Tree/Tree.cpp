@@ -76,6 +76,12 @@ public:
         int rh=height(root->right);
         return(std::max(lh+rh+1,std::max(diameter(root->left),diameter(root->right))));
     }
+    int maxInTree(TreeNode * root){
+        if(root==NULL){
+            return INT_MIN;
+        }
+        return (std::max(root->data,std::max(maxInTree(root->left),maxInTree(root->right))));
+    }
     ~Tree();
 };
 
@@ -92,6 +98,8 @@ int main(){
     cout<<endl;
     cout<<tree->height(tree->root)<<endl;    
     cout<<tree->diameter(tree->root)<<endl;
+    cout<<tree->maxInTree(tree->root)<<endl;
+
 
 
 
