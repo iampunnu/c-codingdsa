@@ -22,6 +22,7 @@ public:
         this->root=NULL;
 
     }
+
     TreeNode * insert(){
         TreeNode* root=NULL;
         cout<<"enter data"<<endl;
@@ -38,6 +39,7 @@ public:
         root->right=insert();
         return root;
     }
+
     void preorder(TreeNode * root){
         if(root==NULL){
             return;
@@ -46,6 +48,7 @@ public:
         preorder(root->left);
         preorder(root->right);
     }
+
     bool path(TreeNode * root,vector<int>&  v,int data){
         if(root==NULL){
             return false;
@@ -81,6 +84,9 @@ public:
             return INT_MIN;
         }
         return (std::max(root->data,std::max(maxInTree(root->left),maxInTree(root->right))));
+    }
+    int lca(TreeNode * root,int a,int b){
+        
     }
     ~Tree();
 };
